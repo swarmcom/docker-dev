@@ -21,4 +21,3 @@ This will bring up all containers and will perform necessary configuration. For 
 _sudo ./swarmcom help_  
 You can connect to first node of BigCouch cluster on port 5984 in Docker host 
 
-__Note__: Kazoo components are installed as explained in: https://2600hz.atlassian.net/wiki/display/Dedicated/via+RPM
