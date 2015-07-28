@@ -35,7 +35,7 @@ cleanContainers() {
 }
 
 init() {
-  docker exec -i -t swarmdev_freeswitch_1 /bin/bash -c /tmp/scripts/setup.sh
+  docker exec -i -t swarmdev_db1_1 /bin/bash -c /tmp/scripts/setup.sh
 }
 
 cleanImages() {
