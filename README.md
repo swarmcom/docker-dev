@@ -12,7 +12,7 @@ _service docker restart_
 
 ## Run system:
 * clone repository:  
-_git clone https://github.com/swarmcom/swarm-dev.git_  
+_git clone git@github.com:swarmcom/swarm-dev.git_  
 or  
 _git clone https://github.com/swarmcom/swarm-dev.git_ (in case you don't have commit rights)
 * cd into swarm-dev directory and issue  
