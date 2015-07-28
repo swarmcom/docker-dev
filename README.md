@@ -1,2 +1,2 @@
-# docker-dev
+# swarm-dev
 Docker development environment
