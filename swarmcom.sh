@@ -26,12 +26,12 @@ USAGE
 }
 
 cleanContainers() {
-  docker rm swarmdev_db1_1 && \
-  docker rm swarmdev_db2_1 && \
-  docker rm swarmdev_db3_1 && \
-  docker rm swarmdev_freeswitch_1 && \
-  docker rm swarmdev_skydock_1 && \
-  docker rm swarmdev_skydns_1
+  docker rm -f swarmdev_db1_1
+  docker rm -f swarmdev_db2_1
+  docker rm -f swarmdev_db3_1
+  docker rm -f swarmdev_freeswitch_1
+  docker rm -f swarmdev_skydock_1
+  docker rm -f swarmdev_skydns_1
 }
 
 init() {
