@@ -43,7 +43,6 @@ listen haproxy-stats 127.0.0.1:22002
 IPDB1=`ping -c 1 swarmdev_db1_1.bigcouch.dev.swarm | grep "64 bytes from"|awk '{print $4}'`
 IPDB2=`ping -c 1 swarmdev_db2_1.bigcouch.dev.swarm | grep "64 bytes from"|awk '{print $4}'`
 IPDB3=`ping -c 1 swarmdev_db3_1.bigcouch.dev.swarm | grep "64 bytes from"|awk '{print $4}'`
-echo $IPDB1 $IPDB2 $IPDB3
 sed -i 's/{IP_DB1}/'$IPDB1'/g' /etc/haproxy/haproxy.cfg
 sed -i 's/{IP_DB2}/'$IPDB2'/g' /etc/haproxy/haproxy.cfg
 sed -i 's/{IP_DB3}/'$IPDB3'/g' /etc/haproxy/haproxy.cfg
