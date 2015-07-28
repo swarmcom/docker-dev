@@ -1,0 +1,41 @@
+skydns:
+  image: crosbymichael/skydns
+  command: -nameserver 8.8.8.8:53 -domain swarm
+  dns: 8.8.8.8:53
+  ports:
+   - 172.17.42.1:53:53/udp
+skydock:
+  image: crosbymichael/skydock
+  command: -ttl 30 -environment dev -s /docker.sock -domain swarm -name swarmdev_skydns_1
+  volumes:
+   - /var/run/docker.sock:/docker.sock
+  links:
+   - skydns
+   - db1
+   - db2
+   - db3
+   - freeswitch
+db1:
+  image: dizzy/bigcouch
+  hostname: swarmdev_db1_1.bigcouch
+  domainname: dev.swarm
+  dns: 172.17.42.1
+  ports:
+   - "5984:5984"
+   - "5986:5986"
+db2:
+  image: dizzy/bigcouch
+  hostname: swarmdev_db2_1.bigcouch
+  domainname: dev.swarm
+  dns: 172.17.42.1
+db3:
+  image: dizzy/bigcouch
+  hostname: swarmdev_db3_1.bigcouch
+  domainname: dev.swarm
+  dns: 172.17.42.1
+freeswitch:
+  image: dizzy/freeswitch
+  hostname: swarmdev_freeswitch_1.freeswitch
+  domainname: dev.swarm
+  dns: 172.17.42.1
+  privileged: true
