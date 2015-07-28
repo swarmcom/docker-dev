@@ -35,8 +35,7 @@ cleanContainers() {
 }
 
 init() {
-  docker exec -i -t swarmdev_db1_1 script /dev/null -c "curl -X PUT swarmdev_db1_1.bigcouch.dev.swarm:5986/nodes/bigcouch@swarmdev_db2_1.bigcouch.dev.swarm -d {}"
-  docker exec -i -t swarmdev_db1_1 script /dev/null -c "curl -X PUT swarmdev_db1_1.bigcouch.dev.swarm:5986/nodes/bigcouch@swarmdev_db3_1.bigcouch.dev.swarm -d {}"
+  docker exec -i -t swarmdev_freeswitch_1 /bin/bash -c /tmp/scripts/setup.sh
 }
 
 cleanImages() {

@@ -23,6 +23,8 @@ db1:
   ports:
    - "5984:5984"
    - "5986:5986"
+  volumes:
+  - scripts/bigcouch/:/tmp/scripts
 db2:
   image: dizzy/bigcouch
   hostname: swarmdev_db2_1.bigcouch
