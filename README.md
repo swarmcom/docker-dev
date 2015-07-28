@@ -16,10 +16,10 @@ _git clone git@github.com:swarmcom/swarm-dev.git_
 or  
 _git clone https://github.com/swarmcom/swarm-dev.git_ (in case you don't have commit rights)
 * cd into swarm-dev directory and issue  
-_sudo ./swarmcom init_  
+_sudo ./swarmcom.sh init_  
 This command will bring up all containers and will perform initial configuration (setting up BigCouch cluster). For subsequent starts of the system use  
-_sudo ./swarmcom start_  
+_sudo ./swarmcom.sh start_  
 For more details about swarmcom script run  
-_sudo ./swarmcom help_  
+_sudo ./swarmcom.sh help_  
 You can connect to first node of BigCouch cluster on port 5984 in Docker host 
 
