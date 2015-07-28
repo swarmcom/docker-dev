@@ -46,13 +46,18 @@ cleanImages() {
   docker rmi docker.io/crosbymichael/skydns
 }
 
+setupFreeswitch() {
+  docker exec -i -t swarmdev_freeswitch_1 /bin/bash -c /tmp/scripts/setup.sh
+}
+
 case "$1" in
   clean)
     stop
     cleanContainers
     ;;
   start)
-    docker-compose up -d
+    docker-compose up -d && \
+    setupFreeswitch
     ;;
   stop)
     docker-compose stop
@@ -61,8 +66,9 @@ case "$1" in
     usage
     ;;
   init)
-    docker-compose up -d
-    init
+    docker-compose up -d && \
+    init && \
+    setupFreeswitch
     ;;
   reset-all)
     clean

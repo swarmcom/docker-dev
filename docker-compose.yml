@@ -39,3 +39,5 @@ freeswitch:
   domainname: dev.swarm
   dns: 172.17.42.1
   privileged: true
+  volumes:
+  - scripts/freeswitch/:/tmp/scripts
