@@ -51,7 +51,6 @@ setupFreeswitch() {
 
 case "$1" in
   clean)
-    stop
     cleanContainers
     ;;
   start)
